@@ -22,8 +22,13 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
+
           },
           "configurations": {
             "production": {
