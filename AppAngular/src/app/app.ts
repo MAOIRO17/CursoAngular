@@ -9,13 +9,14 @@ import { Replicador } from './replicador/replicador';
 import { Saludar } from "./saludar/saludar";
 import { ComponenteIf } from './componente-if/componente-if';
 import { AgregarTarea } from "./agregar-tarea/agregar-tarea";
+import { ComponenteFor } from "./componente-for/componente-for";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [ComponenteIf, AgregarTarea]
+  imports: [ComponenteIf, AgregarTarea, ComponenteFor]
 })
 export class App {  
-  title = "Referencias Locales en Angular"; ;
+  title = "For en Angular"; ;
 }

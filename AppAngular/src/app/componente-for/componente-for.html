@@ -1,0 +1,20 @@
+<div class="CONTAINER MT-5">
+  <h2 class="text-center">Lista de Tareas</h2>
+  <ul class="list-group w-50 mx-auto">
+    @for (tarea of tareas; track tarea) {
+    <li class="list-group-item text-center">{{ tarea }}</li>
+    }
+  </ul>
+  <input
+    type="text"
+    class="form-control w-50 mx-auto mt-3"
+    placeholder="Nueva tarea"
+    #nuevaTarea
+  />
+  <button
+    class="btn btn-primary w-50 mx-auto mt-2"
+    (click)="agregarTarea(nuevaTarea.value)"
+  >
+    Agregar Tarea
+  </button>
+</div>
