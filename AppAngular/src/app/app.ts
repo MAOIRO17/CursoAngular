@@ -7,13 +7,14 @@ import { Hijo } from "./hijo/hijo";
 import { MostrarMensaje } from './mostrar-mensaje/mostrar-mensaje';
 import { Replicador } from './replicador/replicador';
 import { Saludar } from "./saludar/saludar";
+import { ComponenteIf } from './componente-if/componente-if';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [NuevoComponente, ComponenteEnLinea, Interpolacion, Padre, Hijo, MostrarMensaje, Replicador, Saludar]
+  imports: [ComponenteIf]
 })
 export class App {  
-  title = signal('Two Way Data Binding');
+  title = "If en Angular"; ;
 }
