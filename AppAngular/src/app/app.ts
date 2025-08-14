@@ -6,13 +6,14 @@ import { Padre } from './padre/padre';
 import { Hijo } from "./hijo/hijo";
 import { MostrarMensaje } from './mostrar-mensaje/mostrar-mensaje';
 import { Replicador } from './replicador/replicador';
+import { Saludar } from "./saludar/saludar";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [NuevoComponente, ComponenteEnLinea, Interpolacion, Padre, Hijo,MostrarMensaje,Replicador]
+  imports: [NuevoComponente, ComponenteEnLinea, Interpolacion, Padre, Hijo, MostrarMensaje, Replicador, Saludar]
 })
 export class App {  
-  title = signal('Property Binding');
+  title = signal('Two Way Data Binding');
 }
