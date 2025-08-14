@@ -8,13 +8,14 @@ import { MostrarMensaje } from './mostrar-mensaje/mostrar-mensaje';
 import { Replicador } from './replicador/replicador';
 import { Saludar } from "./saludar/saludar";
 import { ComponenteIf } from './componente-if/componente-if';
+import { AgregarTarea } from "./agregar-tarea/agregar-tarea";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [ComponenteIf]
+  imports: [ComponenteIf, AgregarTarea]
 })
 export class App {  
-  title = "If en Angular"; ;
+  title = "Referencias Locales en Angular"; ;
 }
