@@ -1,4 +1,39 @@
-<h3 class="text-warning">Listado de productos</h3>
-<app-producto />
-<app-producto />
-<app-producto />
+<div class="container mt-3">
+  <h3 class="text-warning">Listado de Productos</h3>
+  <ul class="list-group w-50 mx-auto">
+    <li *ngFor="let producto of productos" class="list-group-item text-center">
+      {{ producto.descripcion }}, {{ producto.precio }}€
+    </li>
+  </ul>
+
+  <h5 class="text-success mt-3">Agregar Nuevo Producto</h5>
+  <form class="form-inline" (ngSubmit)="agregarProducto()">
+    <div class="form-group mb-2">
+      <label for="descripcion" class="sr-only">Descripción</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descripcion"
+        placeholder="Descripción del producto"
+        [(ngModel)]="descripcionInput"
+        name="descripcion"
+      />
+    </div>
+
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="precio" class="sr-only">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="precio"
+        placeholder="Precio del producto"
+        [(ngModel)]="precioInput"
+        name="precio"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2">
+      Agregar Producto
+    </button>
+  </form>
+</div>
