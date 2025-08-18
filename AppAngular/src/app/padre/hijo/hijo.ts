@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hijo.css'
 })
 export class Hijo {
-@Input() mensaje!: string;
+  @Output() avisarPadre= new EventEmitter<string>();
+enviarMensaje() {
+this.avisarPadre.emit("Mensaje desde Hijo");
+}
 }
