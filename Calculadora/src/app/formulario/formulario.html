@@ -1,0 +1,27 @@
+ <div class="mb-3">
+              <label for="operandoA" class="form-label">Operando A:</label>
+              <input
+                type="number"
+                id="operandoA"
+                class="form-control"
+                [(ngModel)]="operandoA"
+                name="operandoA"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="operandoB" class="form-label">Operando B:</label>
+              <input
+                type="number"
+                id="operandoB"
+                class="form-control"
+                [(ngModel)]="operandoB"
+                name="operandoB"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="d-grid">
+              <button type="button" class="btn btn-primary" (click)="sumar()">Sumar</button>
+            </div>
