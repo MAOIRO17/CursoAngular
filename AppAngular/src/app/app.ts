@@ -1,21 +1,19 @@
-import { Component } from '@angular/core';
-import { AgregarTarea } from "./agregar-tarea/agregar-tarea";
-import { ComponenteFor } from "./componente-for/componente-for";
-import { ComponenteIf } from './componente-if/componente-if';
-import { Hijo } from './padre/hijo/hijo';
-import { Padre } from './padre/padre';
-import { ViewChildComponent } from "./view-child/view-child";
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import { Component, LOCALE_ID } from '@angular/core';
+import { EjempploPipes } from "./ejempplo-pipes/ejempplo-pipes";
 import { Mensaje } from './mensaje';
-import { ListadoUsuarios } from "./listado-usuarios/listado-usuarios";
-
+//Datos locales para el idioma español
+registerLocaleData(localeEs, 'es');
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [ListadoUsuarios]
+  imports: [EjempploPipes],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }]
 })
 export class App {  
-  title = "Servicios y Observables en Angular"; 
+  title = "Ejemplo Pipes en Angular"; 
 
   mensaje: string;
   constructor(mensajeService: Mensaje) {
