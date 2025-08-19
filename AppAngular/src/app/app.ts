@@ -5,13 +5,20 @@ import { ComponenteIf } from './componente-if/componente-if';
 import { Hijo } from './padre/hijo/hijo';
 import { Padre } from './padre/padre';
 import { ViewChildComponent } from "./view-child/view-child";
+import { Mensaje } from './mensaje';
+import { ListadoUsuarios } from "./listado-usuarios/listado-usuarios";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [ComponenteIf, AgregarTarea, ComponenteFor, Padre, Hijo, ViewChildComponent]
+  imports: [ListadoUsuarios]
 })
 export class App {  
-  title = "Decorador ViewChild en Angular"; ;
+  title = "Servicios y Observables en Angular"; 
+
+  mensaje: string;
+  constructor(mensajeService: Mensaje) {
+    this.mensaje = mensajeService.getMensaje();    
+}
 }
