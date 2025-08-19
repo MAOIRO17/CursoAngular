@@ -15,14 +15,16 @@ export class FormularioComponent {
   descripcionInput: string = '';
   precioInput: number | null = null;
 
-  constructor(private productoService: ProductoService){}
-  
-  agregarProducto(evento: Event){
+  constructor(private productoService: ProductoService) {
+    this.productoService.detalleProductoEmitter.subscribe((producto: Producto) => alert(`Producto seleccionado: ${producto.descripcion}, Precio: $${producto.precio}`));
+  }
+
+  agregarProducto(evento: Event) {
     evento.preventDefault();
-    
+
     //Validar que sean valores correcto
-    if(this.descripcionInput.trim() === '' 
-      || this.precioInput == null || this.precioInput <=0){
+    if (this.descripcionInput.trim() === ''
+      || this.precioInput == null || this.precioInput <= 0) {
       console.log('Debe ingresar una descripción y un precio válidos');
       return;
     }
